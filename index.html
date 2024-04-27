@@ -4,52 +4,79 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Geopolitika Global</title>
+  <title>Noticias</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
   <header>
-
-    <nav>
-
-      <div class="logo">Opciones</div>
-
-      <ul class="nav-links">
-        <li><a href="#">Portada.</a></li>
-      
-        <li><a href="#">Resumen semanal.</a></li>
-        <li><a href="#">Sobre nosotros.</a></li>
+    <nav class="menu">
+      <ul>
+        <li><a href="#">Portada</a></li>
+        <li><a href="#">Resumen semanal</a></li>
+        <li><a href="#">Sobre Nosotros</a></li>
       </ul>
-
     </nav>
-
+    <h1>Geopolitika Global. Las últimas Noticias... del barrio!</h1>
   </header>
 
-  <div class="hero">
-    <h1>Bienvenido a Geopolitika Global</h1>
-    <p>Noticias en tiempo real, sin interpretaciónes.</p>
-  </div>
+  <div class="container">
+    <div class="news-container">
+      <div class="news-item">
+        <img src="inspeccion.jpg" alt="Noticia 1">
+        <h2>"Alguien se metió con mis gallinas", reclama el gallo.</h2>
+      </div>
+      <div class="news-item">
+        <img src="angryrooster.jpg" alt="Noticia 2">
+        <h2>"Alguien pagara por esto!" Reclama el afectado visiblemente enojado.</h2>
+      </div>
 
-  <div class="formulario">
+      <div class="news-item">
+        <img src="tragedia.jpg" alt="Noticia 3">
+        <h2>Tragico final del gallo ofendido.</h2>
+      </div>
 
-    <h2>Suscribete a nuestro mail de Noticias</h2>
+      <!-- Agrega más elementos de noticias con la misma estructura -->
+    </div>
 
-    <form action="procesar_formulario.php" method="POST">
-      <label for="nombre">Nombre:</label>
-      <input type="text" id="nombre" name="nombre" required>
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
-      <button type="submit">Enviar</button>
-    </form>
-
+    <div class="formulario">
+      <h2>Suscríbete a nuestro boletín de noticias</h2>
+        <form action="procesar_formulario.php" method="POST"> 
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+ 
   </div>
 
   <footer>
-    <p>© 2024. Todos los derechos reservados.</p>
+    <div class="container">
+      <div class="footer-column">
+        <h3>Acerca de Nosotros</h3>
+        <p>Somos una página web de noticias que ofrece contenido actualizado sobre diversos temas.</p>
+      </div>
+      <div class="footer-column">
+        <h3>Enlaces</h3>
+        <ul>
+          <li><a href="#">Portada</a></li>
+          <li><a href="#">Resumen Semanal</a></li>
+          <li><a href="#">Sobre Nosotros</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Contacto</h3>
+        <p>Email: info@tusnoticias.com</p>
+        <p>Teléfono: 123-456-789</p>
+      </div>
+      <p>© 2024. Todos los derechos reservados.</p>
+    </div>
   </footer>
 
-</body>
 
+</body>
 </html>
