@@ -16,6 +16,7 @@
         <li><a href="#">Portada</a></li>
         <li><a href="#">Resumen semanal</a></li>
         <li><a href="#">Sobre Nosotros</a></li>
+        <li><a href="#" id="loginBtn">LogIn</a></li>
       </ul>
     </nav>
     <h1>Geopolitika Global. Las últimas Noticias... del barrio!</h1>
@@ -31,13 +32,12 @@
         <img src="angryrooster.jpg" alt="Noticia 2">
         <h2>"Alguien pagara por esto!" Reclama el afectado visiblemente enojado.</h2>
       </div>
-
       <div class="news-item">
         <img src="tragedia.jpg" alt="Noticia 3">
         <h2>Tragico final del gallo ofendido.</h2>
       </div>
 
-      <!-- Agrega más elementos de noticias con la misma estructura -->
+      <!-- Agregar más elementos de noticias con la misma estructura -->
     </div>
 
     <div class="formulario">
@@ -50,7 +50,34 @@
         <button type="submit">Enviar</button>
       </form>
     </div>
- 
+    
+    <!-- Sección de Iniciar Sesión como ventana emergente -->
+    <div class="overlay" id="overlay"></div>
+    <div class="login-form" id="loginFormPopup">
+     
+     <div> <h2>Iniciar Sesión</h2> </div>
+      <form id="loginForm">
+        <div>
+          <label for="username">Usuario:</label>
+          <input type="text" id="username" name="username">
+          <span class="error-message" id="usernameError">Este campo es obligatorio.</span>
+        </div>
+        <div>
+          <label for="password">Contraseña:</label>
+          <input type="password" id="password" name="password">
+          <span class="error-message" id="passwordError">Este campo es obligatorio.</span>
+        </div>
+        <div>
+          <button type="submit">Iniciar Sesión</button>
+        </div>
+
+	 <div>
+	<button class="close-btn" id="closeBtn">&times;</button>
+      </div>
+	
+      </form>
+    </div>
+
   </div>
 
   <footer>
@@ -77,6 +104,60 @@
     </div>
   </footer>
 
+  <script>
+    // Mostrar la ventana emergente
+    document.getElementById('loginBtn').addEventListener('click', function(event) {
+      event.preventDefault();
+      document.getElementById('overlay').style.display = 'block';
+      document.getElementById('loginFormPopup').style.display = 'block';
+    });
+
+    // Ocultar la ventana emergente
+    document.getElementById('closeBtn').addEventListener('click', function() {
+      document.getElementById('overlay').style.display = 'none';
+      document.getElementById('loginFormPopup').style.display = 'none';
+    });
+
+    // Validación del formulario
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      // Evitar el envío del formulario
+      event.preventDefault();
+
+      // Ocultar mensajes de error previos
+      document.getElementById('usernameError').style.display = 'none';
+      document.getElementById('passwordError').style.display = 'none';
+
+      // Obtener los valores de los campos
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+      var valid = true;
+
+      // Validar el campo de usuario
+      if (username === '') {
+        document.getElementById('usernameError').style.display = 'inline';
+        valid = false;
+      }
+
+      // Validar el campo de contraseña
+      if (password === '') {
+        document.getElementById('passwordError').style.display = 'inline';
+        valid = false;
+      }
+
+      // Si todos los campos son válidos, proceder
+      if (valid) {
+        // Aquí podrías agregar el código para proceder a la siguiente sección
+        // Por ejemplo, redireccionar a otra página
+        window.location.href = 'pagina_siguiente.html';
+      }
+    });
+
+    // Cerrar la ventana emergente al hacer clic fuera de ella
+    document.getElementById('overlay').addEventListener('click', function() {
+      document.getElementById('overlay').style.display = 'none';
+      document.getElementById('loginFormPopup').style.display = 'none';
+    });
+  </script>
 
 </body>
 </html>
